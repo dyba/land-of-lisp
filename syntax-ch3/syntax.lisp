@@ -19,4 +19,15 @@
   (assert-equal '(beef chicken)   (cdr '(goose beef chicken)))
   )
 
+(define-test understanding-cadr
+  (assert-equal 'program          (cadr '((my new) program task)))
+  (assert-equal 'new              (cadr '(my new program task)))
+  (assert-equal '(new program)    (cadr '(my (new program) task)))
+  )
+
+(define-test understanding-lists
+  (assert-equal '(pork beef chicken)          (list 'pork 'beef 'chicken))
+  (assert-equal (list 'pork 'beef 'chicken)   (cons 'pork (cons 'beef (cons 'chicken ()))))
+  )
+
 (run-tests)

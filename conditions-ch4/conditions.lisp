@@ -1,4 +1,4 @@
-(load "lisp-unit.lisp")
+(load "../lisp-unit/lisp-unit.lisp")
 (use-package :lisp-unit)
 
 ;;; Comparing symbols

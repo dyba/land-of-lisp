@@ -1,4 +1,4 @@
-(load "lisp-unit.lisp")
+(load "../lisp-unit/lisp-unit.lisp")
 (use-package :lisp-unit)
 
 ;;; cons links any two pieces of data in your Lisp program

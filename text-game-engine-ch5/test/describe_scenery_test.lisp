@@ -30,4 +30,7 @@
 (define-test objects-at-test
   (assert-equal '(whiskey) (objects-at 'living-room *house-objects* *house-object-locations*)))
 
+(define-test describe-objects-test
+  (assert-equal '(You see a whiskey on the floor.) (describe-objects 'living-room *house-objects* *house-object-locations*)))
+
 (run-tests)

@@ -10,6 +10,12 @@
                               (bathroom (living-room north door))
                               (kitchen (living-room east hall))))
 
+(defparameter *house-objects* '(whiskey bucket frog chain))
+
+(defparameter *house-object-locations* '((whiskey living-room)
+                                         (bathroom toilet-paper)
+                                         (kitchen cup)))
+
 (define-test describe-location-test
   (assert-equal '(I am in the living room.) (describe-location 'living-room *my-house*))
   (assert-equal '(I am in the bathroom.) (describe-location 'bathroom *my-house*))
@@ -21,5 +27,7 @@
 (define-test describe-paths-test
   (assert-equal '(There is a door going south from here. There is a hall going west from here.) (describe-paths 'living-room *house-edges*)))
 
-(run-tests)
+(define-test objects-at-test
+  (assert-equal '(whiskey) (objects-at 'living-room *house-objects* *house-object-locations*)))
 
+(run-tests)

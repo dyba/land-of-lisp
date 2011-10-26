@@ -25,3 +25,12 @@
   (apply #'append (mapcar #'describe-path (cdr (assoc location edges))))
   )
 
+;;; objects-at <location> <objects> <object-location-mapping>
+;;;
+;;; This function returns a list of objects from all of 
+;;; <objects> in the world that are found in the 
+;;; given <location>.
+(defun objects-at (loc objs obj-locs)
+  (labels ((at-loc-p (obj)
+             (eq (cadr (assoc obj obj-locs)) loc)))
+    (remove-if-not #'at-loc-p objs)))
